@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Unlocked Perspective</title>
+<style>
+:root{--bg:#fafaf8;--fg:#141414;--mut:#6b6b66;--line:#e2e2dc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111110;--fg:#f2f2ee;--mut:#9a9a94;--line:#2a2a27}}
+:root[data-theme="dark"]{--bg:#111110;--fg:#f2f2ee;--mut:#9a9a94;--line:#2a2a27}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Helvetica Neue",Arial,sans-serif}
+a{color:inherit}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;max-width:1200px;margin:auto}
+.logo{font-family:Georgia,serif;font-size:18px;text-decoration:none;letter-spacing:.02em}
+nav a{margin-left:22px;text-decoration:none;color:var(--mut);font-size:14px}
+nav a:hover{color:var(--fg)}
+section{max-width:1200px;margin:auto;padding:64px 5vw}
+.hero{padding-top:12vh;padding-bottom:12vh}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(38px,7vw,84px);line-height:1.05;margin:0 0 24px;max-width:14ch}
+.lead{color:var(--mut);max-width:46ch;font-size:18px}
+h2{font-family:Georgia,serif;font-weight:400;font-size:28px;margin:0 0 28px}
+.btn{display:inline-block;border:1px solid var(--fg);padding:11px 22px;border-radius:999px;text-decoration:none;font-size:14px;background:none;color:var(--fg);cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.grid{columns:3 260px;column-gap:16px}
+.card{break-inside:avoid;margin:0 0 16px;position:relative}
+.card img,.card video{width:100%;display:block;border-radius:4px}
+.card .cap{padding:8px 2px 0;font-size:14px}.card .cap span{color:var(--mut);display:block;font-size:13px}
+.vlink{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;border:1px solid var(--line);border-radius:4px;text-decoration:none;color:var(--mut)}
+.del{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.7);color:#fff;border:0;border-radius:999px;width:28px;height:28px;cursor:pointer}
+.empty{color:var(--mut)}
+#admin{display:none;border:1px dashed var(--line);border-radius:8px;padding:20px;margin-bottom:32px}
+#admin h3{margin:0 0 12px;font-size:15px}
+input,textarea{width:100%;padding:12px;margin:0 0 12px;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:6px;font:inherit}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:700px){.about{grid-template-columns:1fr}nav a{margin-left:14px}}
+.sub{color:var(--mut);margin:-16px 0 40px;font-size:14px}
+h3.rh{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:500;margin:48px 0 14px}
+h3.rh.first{margin-top:0}
+table.rates{width:100%;border-collapse:collapse;max-width:720px}
+table.rates td{padding:13px 0;border-bottom:1px solid var(--line)}
+table.rates td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.pk>div{border:1px solid var(--line);border-radius:8px;padding:22px}
+.pk h4{margin:0;font-weight:500;font-size:15px}
+.pk .pr{font-family:Georgia,serif;font-size:34px;margin:6px 0 10px}
+.pk ul{margin:0;padding-left:18px;color:var(--mut);font-size:14px}
+ul.rl{margin:0;padding-left:18px;max-width:720px}ul.rl li{margin:6px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.tag{font-family:Georgia,serif;font-style:italic;margin-top:56px}
+form{max-width:520px}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:13px;text-align:center;padding:28px 5vw}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">The Unlocked Perspective</a>
+  <nav><a href="#work">Work</a><a href="#rates">Rates</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero" id="top">
+  <h1>See it from a new angle.</h1>
+  <p class="lead">Photography and video that captures the moments, places and people worth remembering.</p>
+  <p><a class="btn" href="#contact">Get in touch</a></p>
+</section>
+
+<section id="work">
+  <h2>Recent projects</h2>
+  <div id="admin">
+    <h3>Add a project (only you can see this)</h3>
+    <input id="a-title" placeholder="Project title">
+    <input id="a-desc" placeholder="Short description (optional)">
+    <input id="a-photos" type="file" accept="image/*" multiple>
+    <input id="a-video" placeholder="Video link (YouTube / Vimeo), optional">
+    <input id="a-vfile" type="file" accept="video/*">
+    <button class="btn" id="a-add">Add &amp; publish</button> <span id="a-msg" class="empty"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="rates">
+  <h2>Rates</h2>
+  <p class="sub">Videography &amp; content creation for businesses. All prices are in Singapore Dollars (SGD).</p>
+
+  <h3 class="rh first">Individual video production</h3>
+  <table class="rates">
+    <tr><td>Basic Reel (15–30 seconds)</td><td>$150</td></tr>
+    <tr><td>Standard Reel (30–60 seconds)</td><td>$200</td></tr>
+    <tr><td>Premium Reel (45–90 seconds)</td><td>$280</td></tr>
+    <tr><td>Product Showcase</td><td>From $220</td></tr>
+    <tr><td>Food / Café Promotional Video</td><td>From $200</td></tr>
+    <tr><td>Business Introduction Video</td><td>From $250</td></tr>
+    <tr><td>Customer Testimonial</td><td>From $280</td></tr>
+    <tr><td>Event Highlight Video</td><td>From $350</td></tr>
+  </table>
+
+  <h3 class="rh">Content packages</h3>
+  <div class="pk">
+    <div><h4>Starter Package</h4><div class="pr">$540</div><ul><li>3 professionally filmed and edited videos</li><li>$180 per video</li></ul></div>
+    <div><h4>Growth Package</h4><div class="pr">$850</div><ul><li>5 professionally filmed and edited videos</li><li>$170 per video</li></ul></div>
+    <div><h4>Business Package</h4><div class="pr">$1,280</div><ul><li>8 professionally filmed and edited videos</li><li>$160 per video</li></ul></div>
+  </div>
+
+  <div class="two">
+    <div>
+      <h3 class="rh">What’s included</h3>
+      <ul class="rl">
+        <li>Professional filming</li>
+        <li>Video editing and colour grading</li>
+        <li>Music and sound design</li>
+        <li>Basic captions and text overlays</li>
+        <li>One revision round per video</li>
+        <li>Final MP4 delivery in vertical 1080 × 1920 format</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="rh">Additional services</h3>
+      <table class="rates">
+        <tr><td>Additional filming location</td><td>From $50</td></tr>
+        <tr><td>Additional revision</td><td>$30 per video</td></tr>
+        <tr><td>Rush delivery</td><td>+30%</td></tr>
+        <tr><td>Raw footage handover</td><td>From $80</td></tr>
+        <tr><td>Additional video format</td><td>$40</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h3 class="rh">Terms &amp; conditions</h3>
+  <ul class="rl">
+    <li>50% deposit required to confirm bookings.</li>
+    <li>Remaining 50% payable upon completion.</li>
+    <li>Standard turnaround is 5–7 working days.</li>
+    <li>Package prices assume one filming location and one consolidated filming session.</li>
+    <li>Additional filming time, locations and complex production requirements may incur additional charges.</li>
+    <li>Prices cover organic social media usage. Paid advertising usage must be agreed separately.</li>
+    <li>Quotations are valid for 14 days.</li>
+  </ul>
+
+  <p class="tag">Your business. Your story. Our perspective.</p>
+  <p><a class="btn" href="#contact">Request a quote</a></p>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div><h2>About</h2></div>
+    <div>
+      <p>The Unlocked Perspective is a photo and video studio focused on telling honest, considered visual stories.</p>
+      <p class="empty">Every project starts with a conversation. Tell me what you have in mind and we'll shape it together.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lead" style="margin-top:0">Email <a href="mailto:haothesnap@gmail.com">haothesnap@gmail.com</a> or use the form below.</p>
+  <form id="cf">
+    <input id="c-name" placeholder="Your name" required>
+    <input id="c-email" type="email" placeholder="Your email" required>
+    <textarea id="c-msg" rows="5" placeholder="Tell me about your project" required></textarea>
+    <button class="btn" type="submit">Send message</button>
+  </form>
+</section>
+
+<footer>&copy; <span id="yr"></span> The Unlocked Perspective</footer>
+
+<script id="data" type="application/json">{"projects":[]}</script>
+<script>
+var state = JSON.parse(document.getElementById('data').textContent);
+var grid = document.getElementById('grid');
+var isOwner = false, artifact = null;
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function esc(s){var d=document.createElement('div');d.textContent=s||'';return d.innerHTML}
+function render(){
+  grid.innerHTML = '';
+  if(!state.projects.length){
+    grid.innerHTML = '<p class="empty">New projects coming soon.</p>';
+    return;
+  }
+  state.projects.forEach(function(p,i){
+    var el = document.createElement('figure');
+    el.className = 'card';
+    var media = '';
+    (p.photos||[]).forEach(function(src){media += '<img loading="lazy" alt="'+esc(p.title)+'" src="'+src+'">'});
+    if(p.vfile) media += '<video controls preload="metadata" src="'+p.vfile+'"></video>';
+    if(p.vlink && /^https?:\/\//.test(p.vlink)) media += '<a class="vlink" target="_blank" rel="noopener" href="'+esc(p.vlink)+'">&#9654; Watch video</a>';
+    el.innerHTML = media + '<figcaption class="cap">'+esc(p.title)+(p.desc?'<span>'+esc(p.desc)+'</span>':'')+'</figcaption>';
+    if(isOwner){
+      var b = document.createElement('button');
+      b.className='del'; b.textContent='\u00d7'; b.title='Remove project';
+      b.onclick = function(){ if(confirm('Remove this project?')){ state.projects.splice(i,1); save(); } };
+      el.appendChild(b);
+    }
+    grid.appendChild(el);
+  });
+}
+function save(){
+  if(!artifact) return;
+  var clone = document.documentElement.cloneNode(true);
+  clone.querySelector('#data').textContent = JSON.stringify(state).replace(/</g,'\\u003c');
+  clone.querySelector('#grid').innerHTML = '';
+  var adm = clone.querySelector('#admin'); adm.removeAttribute('style');
+  ['a-title','a-desc','a-video'].forEach(function(id){clone.querySelector('#'+id).removeAttribute('value')});
+  return artifact.publish('<!doctype html>\n'+clone.outerHTML).catch(function(e){
+    document.getElementById('a-msg').textContent = 'Could not publish: '+(e&&e.code||'error');
+  });
+}
+function resize(file){
+  return new Promise(function(res){
+    var r = new FileReader();
+    r.onload = function(){
+      var im = new Image();
+      im.onload = function(){
+        var s = Math.min(1, 1400/Math.max(im.width,im.height));
+        var c = document.createElement('canvas');
+        c.width = im.width*s; c.height = im.height*s;
+        c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+        res(c.toDataURL('image/jpeg',0.8));
+      };
+      im.src = r.result;
+    };
+    r.readAsDataURL(file);
+  });
+}
+function readFile(f){return new Promise(function(res){var r=new FileReader();r.onload=function(){res(r.result)};r.readAsDataURL(f)})}
+
+document.getElementById('a-add').onclick = async function(){
+  var msg = document.getElementById('a-msg');
+  var title = document.getElementById('a-title').value.trim();
+  if(!title){msg.textContent='Add a title first.';return}
+  var files = document.getElementById('a-photos').files;
+  var vf = document.getElementById('a-vfile').files[0];
+  if(vf && vf.size > 8*1024*1024){msg.textContent='Video file too large (8 MB max). Use a video link instead.';return}
+  msg.textContent = 'Processing...';
+  var p = {title:title, desc:document.getElementById('a-desc').value.trim(), photos:[]};
+  for(var i=0;i<files.length;i++) p.photos.push(await resize(files[i]));
+  var vl = document.getElementById('a-video').value.trim();
+  if(vl) p.vlink = vl;
+  if(vf) p.vfile = await readFile(vf);
+  state.projects.unshift(p);
+  msg.textContent = 'Publishing...';
+  save();
+};
+
+document.getElementById('cf').onsubmit = function(e){
+  e.preventDefault();
+  var n = document.getElementById('c-name').value, em = document.getElementById('c-email').value, m = document.getElementById('c-msg').value;
+  var body = m + '\n\n' + n + '\n' + em;
+  window.location.href = 'mailto:haothesnap@gmail.com?subject=' + encodeURIComponent('Enquiry from ' + n) + '&body=' + encodeURIComponent(body);
+};
+
+render();
+(async function(){
+  try{
+    if(!window.claude) return;
+    var u = await claude.use('user');
+    artifact = await claude.use('artifact');
+    isOwner = !!(u && u.isOwner() && artifact);
+    if(isOwner){ document.getElementById('admin').style.display='block'; render(); }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
